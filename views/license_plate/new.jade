@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+  div#wrap
+    div#navbar
+      ul.navlist
+        li.domain
+          a(href='/') JaredCross.com
+        li 
+          a(href='/') Home
+        li.active 
+          a(href='/projects') Projects
+          ul
+            li
+              a(href='/license_plate') License Plate Communicator
+            li Coming Soon
+  div#content
+    div.row
+      h1 Create A New Account!
+  div#content
+    div.row
+      form(action='/license_plate/sign_up' method = 'post')
+        div
+          label(for='first_name') First Name
+          input(type='text' id='first_name' name='first_name')
+        div
+          label(for='last_name') Last Name
+          input(type='text' id='last_name' name='last_name')
+        div
+          label(for='email') Email Address
+          input(type='text' id='email' name='email')
+        div
+          label(for='password') Password
+          input(type='password' id='password' name ='password')
+        div
+          label(for='confirm') Confirm Password
+          input(type='password' id='confirm' name='confirm')
+        div
+          input(type='submit' value='Create Account' class='create-button')
+      

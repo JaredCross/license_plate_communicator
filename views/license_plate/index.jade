@@ -1,4 +1,4 @@
-extends layout
+extends ../layout
 
 block content
   div#wrap
@@ -6,9 +6,9 @@ block content
       ul.navlist
         li.domain
           a(href='/') JaredCross.com
-        li.active 
+        li 
           a(href='/') Home
-        li
+        li.active 
           a(href='/projects') Projects
           ul
             li
@@ -16,8 +16,10 @@ block content
             li Coming Soon
   div#content
     div.row
-      h1 Under Construction!
+      h1 License Plate Communicator!
   div#content
-    
-      
-  
+    div.row
+      div
+        a(href='/license_plate/sign_in') Sign in here!
+      div
+        a(href='/license_plate/sign_up') Sign up here!
