@@ -51,19 +51,32 @@ table {
 /*************************************************
 **************************************************
 **************************************************/
+body {
+  font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+}
 
 #content {
   padding: 25px;
 }
 
 #header {
-  background-color: lightgray;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#258dc8+42,258dc8+42,258dc8+64;Blue+Flat+%231 */
+  background: rgb(37,141,200); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(37,141,200,1) 42%, rgba(37,141,200,1) 42%, rgba(37,141,200,1) 64%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(42%,rgba(37,141,200,1)), color-stop(42%,rgba(37,141,200,1)), color-stop(64%,rgba(37,141,200,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(37,141,200,1) 42%,rgba(37,141,200,1) 42%,rgba(37,141,200,1) 64%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(37,141,200,1) 42%,rgba(37,141,200,1) 42%,rgba(37,141,200,1) 64%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(37,141,200,1) 42%,rgba(37,141,200,1) 42%,rgba(37,141,200,1) 64%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(37,141,200,1) 42%,rgba(37,141,200,1) 42%,rgba(37,141,200,1) 64%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#258dc8', endColorstr='#258dc8',GradientType=0 ); /* IE6-9 */
+  color: white;
   overflow: hidden;
   width: 100%;
   height: auto;
   padding: 20px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  text-transform: capitalize;
 }
 
 #header div {
@@ -71,8 +84,9 @@ table {
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: bold;
+  font-family: 'Carter One';
 }
 
 form div {
@@ -98,8 +112,9 @@ form input {
   padding: 0;
   margin: 0;
   position: relative;
-  background-color: black;
   z-index: 99;
+  background-color: black;
+
 
 }
 
@@ -122,7 +137,7 @@ form input {
  list-style: none;
  padding: 0;
  margin: 0;
- background-color: black;
+
 }
 
 #navbar li ul li {
@@ -133,6 +148,7 @@ form input {
   clear: both;
   text-align: left;
   height: auto;
+  background-color: black;
 }
 
 #navbar li ul li a {
@@ -142,13 +158,14 @@ form input {
   text-transform: none;
   padding: 0;
   margin: 0;
+  font-weight: normal;
 }
 
 #navbar a {
   display: block;
   padding: 18px 0;
   color: darkgrey;
-  background-color: black;
+
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -180,7 +197,6 @@ form input {
 }
 
 .row {
-  margin-top: 0px;
   width: 100%;
   height: auto;
   border: 1px dashed black;
@@ -240,4 +256,10 @@ form input {
 
 p {
   display: block;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+form {
+  margin-top: 20px;
 }
