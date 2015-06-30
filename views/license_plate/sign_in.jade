@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+  div#wrap
+    div#navbar
+      ul.navlist
+        li.domain
+          a(href='/') JaredCross.com
+        li
+          a(href='/') Home
+        li.active
+          a(href='/projects') Projects
+          ul
+            li
+              a(href='/license_plate') License Plate Communicator
+            li Coming Soon
+  div#header
+    div
+      h1 License Plate Communicator
+  div#content
+    div.row
+      div.col-5
+        p.columns Sign In!
+        form(action='/license_plate/sign_in' method = 'post')
+          div
+            label(for='email') Email Address
+            input(type='text' id='email' name='email' value=(email)? email : '')
+          div
+            label(for='password') Password
+            input(type='password' id='password' name ='password')
+          div
+            input(type='submit' value='Sign In!' class='create-button')
+      if errorArray      
+        div.col-5
+          p.columns Errors:
+            ul
+              for error in errorArray
+                li= error

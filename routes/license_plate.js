@@ -45,6 +45,10 @@ router.post('/sign_up', function (req, res, next) {
 });
 });
 
+router.get('/sign_in', function (req, res, next) {
+  res.render('license_plate/sign_in');
+});
+
 router.get('/:id/user_home', function (req, res, next) {
   if(req.cookies.userID){
     usersCollection.findOne({_id: req.params.id}, function (err, data) {
