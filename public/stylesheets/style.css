@@ -76,21 +76,37 @@ body {
   padding: 20px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  text-transform: capitalize;
-}
-
-#header {
-  width: auto;
+	width: auto;
+	clear: both;
 }
 
 #header div {
   display: inline-block;
 }
 
-h1 {
+.app {
   font-size: 40px;
   font-weight: bold;
   font-family: 'Carter One';
+	float: left;
+}
+
+.app a:link, .app a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+.brand {
+	font-size: 20px;
+	font-weight: bold;
+	font-family: 'Carter One';
+	text-align: right;
+	float: right;
+}
+
+.brand a:link, .brand a:visited {
+	color: white;
+	text-decoration: none;
 }
 
 h2 {
