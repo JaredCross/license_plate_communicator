@@ -5,15 +5,15 @@ var usersCollection = db.get('users');
 var bcrypt = require('bcrypt');
 var functions = require('../src/lib.js');
 
-router.get('/', function (req, res, next) {
+router.get('/license_plate', function (req, res, next) {
   res.render('license_plate/index');
 });
 
-router.get('/sign_up', function (req, res, next) {
+router.get('/license_plate/sign_up', function (req, res, next) {
   res.render('license_plate/new');
 });
 
-router.post('/sign_up', function (req, res, next) {
+router.post('/license_plate/sign_up', function (req, res, next) {
   var firstName = req.body.first_name;
   var lastName = req.body.last_name;
   var emailAddress = req.body.email.toLowerCase();
@@ -45,11 +45,11 @@ router.post('/sign_up', function (req, res, next) {
 });
 });
 
-router.get('/sign_in', function (req, res, next) {
+router.get('/license_plate/sign_in', function (req, res, next) {
   res.render('license_plate/sign_in');
 });
 
-router.post('/sign_in', function (req, res, next) {
+router.post('/license_plate/sign_in', function (req, res, next) {
   usersCollection.findOne({emailAddress: req.body.email}, function (err, data) {
     if (data) {
       if (bcrypt.compareSync(req.body.password, data.password)) {

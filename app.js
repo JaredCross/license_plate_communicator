@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/license_plate', licensePlateRoute);
+app.use('/', licensePlateRoute);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

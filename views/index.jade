@@ -1,23 +1,13 @@
 extends layout
 
 block content
-  div#wrap
-    div#navbar
-      ul.navlist
-        li.domain
-          a(href='/') JaredCross.com
-        li.active 
-          a(href='/') Home
-        li
-          a(href='/projects') Projects
-          ul
-            li
-              a(href='/license_plate') License Plate Communicator
-            li Coming Soon
+  div#header
+    h1 License Plate Communicator
   div#content
     div.row
-      h1 Under Construction!
-  div#content
+      div.col-5
+        a(href='/license_plate/sign_in') Sign in here!
+        a(href='/license_plate/sign_up') Sign up here!
     
       
   
