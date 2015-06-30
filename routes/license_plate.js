@@ -50,7 +50,8 @@ router.get('/license_plate/sign_in', function (req, res, next) {
 });
 
 router.post('/license_plate/sign_in', function (req, res, next) {
-  usersCollection.findOne({emailAddress: req.body.email}, function (err, data) {
+  var username = req.body.email.toLowerCase();
+  usersCollection.findOne({emailAddress: username}, function (err, data) {
     if (data) {
       if (bcrypt.compareSync(req.body.password, data.password)) {
         res.cookie('userID', data._id);
@@ -70,7 +71,7 @@ router.post('/license_plate/sign_in', function (req, res, next) {
 
 });
 
-router.get('/:id/user_home', function (req, res, next) {
+router.get('/license_plate/:id/user_home', function (req, res, next) {
   if(req.cookies.userID){
     usersCollection.findOne({_id: req.params.id}, function (err, data) {
       res.render('license_plate/user_home', {userData: data});
