@@ -15,26 +15,34 @@ block content
               a(href='/license_plate') License Plate Communicator
             li Coming Soon
   div#header
+    div
       h1 License Plate Communicator
   div#content
     div.row
-      p Create a New Account!
-      form(action='/license_plate/sign_up' method = 'post')
-        div
-          label(for='first_name') First Name
-          input(type='text' id='first_name' name='first_name')
-        div
-          label(for='last_name') Last Name
-          input(type='text' id='last_name' name='last_name')
-        div
-          label(for='email') Email Address
-          input(type='text' id='email' name='email')
-        div
-          label(for='password') Password
-          input(type='password' id='password' name ='password')
-        div
-          label(for='confirm') Confirm Password
-          input(type='password' id='confirm' name='confirm')
-        div
-          input(type='submit' value='Create Account' class='create-button')
-      
+      div.col-5
+        p.columns Create a New Account!
+        form(action='/license_plate/sign_up' method = 'post')
+          div
+            label(for='first_name') First Name
+            input(type='text' id='first_name' name='first_name' value=(firstName)? firstName : '')
+          div
+            label(for='last_name') Last Name
+            input(type='text' id='last_name' name='last_name' value=(lastName)? lastName : '')
+          div
+            label(for='email') Email Address
+            input(type='text' id='email' name='email' value=(email)? email : '')
+          div
+            label(for='password') Password
+            input(type='password' id='password' name ='password')
+          div
+            label(for='confirm') Confirm Password
+            input(type='password' id='confirm' name='confirm')
+          div
+            input(type='submit' value='Create Account' class='create-button')
+      if errorArray      
+        div.col-5
+          p.columns Errors:
+            ul
+              for error in errorArray
+                li= error
+            

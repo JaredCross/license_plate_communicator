@@ -79,8 +79,12 @@ body {
   text-transform: capitalize;
 }
 
+#header {
+  width: auto;
+}
+
 #header div {
-  margin-left: 9%;
+  display: inline-block;
 }
 
 h1 {
@@ -89,17 +93,23 @@ h1 {
   font-family: 'Carter One';
 }
 
+h2 {
+	text-transform: capitalize;
+	font-weight: bold;
+}
+
 form div {
   margin-top: 10px;
 }
 
 form label {
   display: inline-block;
-  width: 6%;
+  width: 30%;
+  text-align: center;
 }
 
 form input {
-  width: 10%;
+  width: 50%;
 }
 
 .create-button {
@@ -114,8 +124,6 @@ form input {
   position: relative;
   z-index: 99;
   background-color: black;
-
-
 }
 
 #navbar {
@@ -165,7 +173,6 @@ form input {
   display: block;
   padding: 18px 0;
   color: darkgrey;
-
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -196,10 +203,10 @@ form input {
   display: block;
 }
 
+
 .row {
   width: 100%;
   height: auto;
-  border: 1px dashed black;
   padding: 25px;
   box-sizing: border-box;
   display: inline-block;
@@ -207,15 +214,26 @@ form input {
 
 
 
-.col-4 {
-  width: 30%;
+.col-5 {
+  width: 40%;
   height: 250px;
   border: 1px solid black;
   text-align: center;
   box-sizing: border-box;
   display:inline-block;
   float: left;
+  margin-left: 6%;
 
+}
+
+.col-5 li {
+  color: red;
+  list-style: circle;
+  display: block;
+  text-decoration: none;
+  margin-top: 5px;
+  padding: 0;
+  clear: both;
 }
 
 .col-8 {
@@ -254,7 +272,7 @@ form input {
   text-align: center;
 }
 
-p {
+p.columns {
   display: block;
   font-size: 18px;
   font-weight: bold;
