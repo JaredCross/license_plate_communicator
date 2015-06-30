@@ -76,7 +76,7 @@ router.get('/:id/user_home', function (req, res, next) {
       res.render('license_plate/user_home', {userData: data});
     });
   } else {
-    res.redirect('/');
+    res.redirect('/license_plate/sign_in');
   }
 });
 
