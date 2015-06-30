@@ -49,6 +49,27 @@ router.get('/sign_in', function (req, res, next) {
   res.render('license_plate/sign_in');
 });
 
+router.post('/sign_in', function (req, res, next) {
+  usersCollection.findOne({emailAddress: req.body.email}, function (err, data) {
+    if (data) {
+      if (bcrypt.compareSync(req.body.password, data.password)) {
+        res.cookie('userID', data._id);
+        res.redirect('/license_plate/'+ data._id +'/user_home');
+      } else {
+        var errorArray = ['Incorrect username or password'];
+        res.render('license_plate/sign_in', {errorArray: errorArray,
+                                              email: req.body.email});
+      }
+    } else {
+      var errorArray = ['Incorrect username or password'];
+      res.render('license_plate/sign_in', {errorArray: errorArray,
+                                            email: req.body.email});
+    }
+
+  });
+
+});
+
 router.get('/:id/user_home', function (req, res, next) {
   if(req.cookies.userID){
     usersCollection.findOne({_id: req.params.id}, function (err, data) {
