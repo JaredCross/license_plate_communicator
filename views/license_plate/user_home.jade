@@ -1,12 +1,29 @@
 extends ../layout
 
 block content
-  div#header
-    h1.app
-      a(href='http://lpc.jaredcross.com') Road Rage!
-    h1.brand 
-      a(href='http://jaredcross.com') jaredcross.com
-  div#content
-    h2 Welcome #{userData.firstName} #{userData.lastName}!
-    p Your username is #{userData.emailAddress}
+  div#wrapper
+    div#header
+      h1.app
+        a(href='http://lpc.jaredcross.com') Road Rage!
+      h1.brand 
+        a(href='http://jaredcross.com') jaredcross.com
+    div#content
+      div.row
+        div.banner
+          div.welcome
+            h2 Welcome #{userData.firstName} #{userData.lastName}!
+          div.options
+            p Register Your License Plate
+      div.row
+        div.innerRow
+          div.sendDM
+            p Send a Direct Message
+          div.sendLPM
+            p
+              a(href="/license_plate/" + userData._id + "/sendLPM") Send a License Plate Message
+        div.col-40
+          h2 Direct Messages
+        div.col-40
+          h2 License Plate Messages
+    div#footer
     

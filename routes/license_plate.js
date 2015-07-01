@@ -36,7 +36,9 @@ router.post('/license_plate/sign_up', function (req, res, next) {
         usersCollection.insert({firstName: req.body.first_name,
                                 lastName: req.body.last_name,
                                 emailAddress: req.body.email,
-                                password: hashedPass});
+                                password: hashedPass,
+                                messagesLPM: [],
+                                messagesDM: []});
         usersCollection.findOne({emailAddress: emailAddress}, function(err, data) {
             res.cookie('userID', data._id);
             res.redirect('/license_plate/'+ data._id +'/user_home');
@@ -80,6 +82,16 @@ router.get('/license_plate/:id/user_home', function (req, res, next) {
     res.redirect('/license_plate/sign_in');
   }
 });
+
+router.get('/license_plate/:id/sendLPM', function (req, res, next) {
+  if(req.cookies.userID) {
+    usersCollection.findOne({_id: req.params.id}, function (err, data) {
+      res.render('license_plate/sendLPM', {userData: data});
+    });
+  } else {
+    res.redirect('/license_plate/sign_in');
+  }
+})
 
 
 

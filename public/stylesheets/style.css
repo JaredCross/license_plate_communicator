@@ -55,33 +55,42 @@ body {
   font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 }
 
+#wrapper {
+	height: 100%;
+}
+
 #content {
   padding: 25px;
 }
 
 #header {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#258dc8+42,258dc8+42,258dc8+64;Blue+Flat+%231 */
-  background: rgb(37,141,200); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(37,141,200,1) 42%, rgba(37,141,200,1) 42%, rgba(37,141,200,1) 64%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(42%,rgba(37,141,200,1)), color-stop(42%,rgba(37,141,200,1)), color-stop(64%,rgba(37,141,200,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(37,141,200,1) 42%,rgba(37,141,200,1) 42%,rgba(37,141,200,1) 64%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(37,141,200,1) 42%,rgba(37,141,200,1) 42%,rgba(37,141,200,1) 64%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(37,141,200,1) 42%,rgba(37,141,200,1) 42%,rgba(37,141,200,1) 64%); /* IE10+ */
-  background: linear-gradient(to bottom,  rgba(37,141,200,1) 42%,rgba(37,141,200,1) 42%,rgba(37,141,200,1) 64%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#258dc8', endColorstr='#258dc8',GradientType=0 ); /* IE6-9 */
+	background-color: #3A5683;
   color: white;
   overflow: hidden;
   width: 100%;
-  height: auto;
+  height: 40px;
   padding: 20px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-	width: auto;
 	clear: both;
 }
 
-#header div {
-  display: inline-block;
+
+
+#footer {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#258dc8+42,258dc8+42,258dc8+64;Blue+Flat+%231 */
+	background: #3A5683;
+	color: white;
+	overflow: hidden;
+	width: 100%;
+	height: auto;
+	padding: 20px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	clear: both;
+	bottom: 0;
+	position: relative;
 }
 
 .app {
@@ -89,6 +98,7 @@ body {
   font-weight: bold;
   font-family: 'Carter One';
 	float: left;
+	margin-left: 8.5%;
 }
 
 .app a:link, .app a:visited {
@@ -102,6 +112,7 @@ body {
 	font-family: 'Carter One';
 	text-align: right;
 	float: right;
+	margin-right: 2%;
 }
 
 .brand a:link, .brand a:visited {
@@ -112,6 +123,7 @@ body {
 h2 {
 	text-transform: capitalize;
 	font-weight: bold;
+	font-size: 20px;
 }
 
 form div {
@@ -135,11 +147,80 @@ form input {
 .row {
   width: 100%;
   height: auto;
-  padding: 25px;
+  padding: 20px;
   box-sizing: border-box;
   display: inline-block;
+	margin-bottom: 20px;
+	background-color: #3A5683;
 }
 
+.row div:last-child {
+	margin-left: 2%;
+}
+
+
+.innerRow {
+	width: 100%;
+	height: auto;
+	padding: 25px;
+	box-sizing: border-box;
+	display: inline-block;
+	color: white;
+}
+
+.innerRow div:last-child {
+	margin-left: 36%;
+}
+
+.banner {
+	margin-left: 7%;
+	color: white;
+	clear: both;
+}
+
+.welcome {
+	float: left;
+}
+
+.options {
+	float: right;
+}
+
+.sendDM {
+	display: inline-block;
+	margin-left: 18%;
+	border: 1px solid black;
+	border-radius: 20px;
+	width: auto;
+	box-sizing: border-box;
+	height: 30px;
+	padding: 7px;
+	font-weight: bold;
+	background-color: #EBF5EE;
+	color: black;
+	-webkit-box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.75);
+	box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.75);
+	cursor: pointer;
+}
+
+.sendLPM {
+	display: inline-block;
+	margin-left: 32%;
+	border: 1px solid black;
+	border-radius: 20px;
+	width: auto;
+	box-sizing: border-box;
+	height: 30px;
+	padding: 7px;
+	font-weight: bold;
+	background-color: #EBF5EE;
+	color: black;
+	-webkit-box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.75);
+	box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.75);
+	cursor: pointer;
+}
 
 
 .col-5 {
@@ -152,6 +233,25 @@ form input {
   float: left;
   margin-left: 6%;
 
+}
+
+.col-40 {
+  width: 48%;
+  height: auto;
+	min-height: 400px;
+  border: 1px solid black;
+  text-align: center;
+  box-sizing: border-box;
+  display:inline-block;
+  float: left;
+	margin-left: 1%;
+	background-color: white;
+
+}
+
+.col-40 h2 {
+	text-align: center;
+	margin-top: 10px;
 }
 
 .col-5 li {
