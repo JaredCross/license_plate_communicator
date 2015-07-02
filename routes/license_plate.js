@@ -98,7 +98,11 @@ router.get('/license_plate/:id/sendLPM', function (req, res, next) {
 router.post('/license_plate/:id/sendLPM', function (req, res, next) {
   if (req.cookies.userID) {
     usersCollection.update({licensePlate: req.body.toLicensePlate},
-                            {$push: { messagesLPM: req.body.lpMessage}});
+                            {
+                              $currentDate: {
+                                "messagesLPM.date": { $type: "timestamp"}
+                              },
+                              $push: { messagesLPM: req.body.lpMessage}});
       res.redirect('/license_plate/'+ req.params.id +'/user_home');
   } else {
     res.redirect('/license_plate/sign_in');

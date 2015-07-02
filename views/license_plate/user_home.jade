@@ -9,8 +9,12 @@ block content
           div.welcome
             h2 Welcome #{userData.firstName} #{userData.lastName}!
           div.options
-            p 
-              a(href='/license_plate/' + userData._id + '/register_lp') Register a License Plate
+            ul
+              li Menu
+                ul
+                  li Manage License Plates
+                  li Sent Messages
+                  li Logout
       div.rowTransparent
         div.col-40
           div.messagesContainerRow
