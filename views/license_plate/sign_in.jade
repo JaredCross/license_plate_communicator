@@ -10,17 +10,17 @@ block content
     div.rowTransparent
       div.col-5
         div.row
-          h2 Enter your log in info
+          h2 Enter your login info
         p.columns Sign In!
-        form(action='/license_plate/sign_in' method = 'post')
+        form.signIn(action='/license_plate/sign_in' method = 'post')
           div
             label(for='email') Email Address
             input(type='text' id='email' name='email' value=(email)? email : '')
           div
             label(for='password') Password
             input(type='password' id='password' name ='password')
-          div
-            input(type='submit' value='Sign In!' class='create-button')
+          div.buttonContainer
+            input(type='submit' value='Sign In!' class='loginButton')
       if errorArray      
         div.col-5
           p.columns Errors:

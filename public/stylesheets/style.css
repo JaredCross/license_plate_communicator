@@ -150,6 +150,16 @@ form input {
   width: auto;
 }
 
+.buttonContainer {
+	text-align: left;
+}
+
+.loginButton {
+	width: auto;
+	margin-left: 39%;
+}
+
+
 .row {
   width: 100%;
   height: auto;
