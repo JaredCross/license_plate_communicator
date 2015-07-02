@@ -4,7 +4,13 @@ block content
   include ../../includes/site_banner.jade
   div#content
     div.row
+      div.banner
+        div.welcome
+          h2 Sign in to Road Rage!
+    div.rowTransparent
       div.col-5
+        div.row
+          h2 Enter your log in info
         p.columns Sign In!
         form(action='/license_plate/sign_in' method = 'post')
           div

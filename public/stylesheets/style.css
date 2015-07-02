@@ -190,6 +190,10 @@ form input {
 	font-size: 20px;
 }
 
+.entrySign a {
+	cursor: pointer;
+}
+
 .entrySign p, .entrySign ul {
 	text-align: left;
 }
@@ -201,6 +205,7 @@ form input {
 
 .entrySign li {
 	margin-left: 6%;
+	margin-top: 1%;
 }
 
 .innerRow {
