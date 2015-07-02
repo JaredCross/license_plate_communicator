@@ -38,13 +38,15 @@ router.post('/license_plate/sign_up', function (req, res, next) {
                                 emailAddress: req.body.email,
                                 password: hashedPass,
                                 messagesLPM: [],
-                                messagesDM: []});
+                                messagesDM: [],
+                                licensePlate: ""}, function (err, data) {
         usersCollection.findOne({emailAddress: emailAddress}, function(err, data) {
             res.cookie('userID', data._id);
             res.redirect('/license_plate/'+ data._id +'/user_home');
         });
-    }
-});
+      });
+  }
+  });
 });
 
 router.get('/license_plate/sign_in', function (req, res, next) {
@@ -91,7 +93,39 @@ router.get('/license_plate/:id/sendLPM', function (req, res, next) {
   } else {
     res.redirect('/license_plate/sign_in');
   }
-})
+});
+
+router.post('/license_plate/:id/sendLPM', function (req, res, next) {
+  if (req.cookies.userID) {
+    usersCollection.update({licensePlate: req.body.toLicensePlate},
+                            {$push: { messagesLPM: req.body.lpMessage}});
+      res.redirect('/license_plate/'+ req.params.id +'/user_home');
+  } else {
+    res.redirect('/license_plate/sign_in');
+  }
+
+});
+
+router.get('/license_plate/:id/register_lp', function (req, res, next) {
+  if (req.cookies.userID) {
+    usersCollection.findOne({_id: req.params.id}, function (err, data) {
+      res.render('license_plate/register_lp', {userData: data});
+    });
+  } else {
+      res.redirect('/license_plate/sign_in');
+  }
+});
+
+router.post('/license_plate/:id/register_lp', function (req, res, next) {
+  if (req.cookies.userID) {
+    usersCollection.update({_id: req.params.id},
+                            {$set: {licensePlate: req.body.lpNumber}}, function (err, data) {
+        res.redirect('/license_plate/'+ req.params.id +'/user_home');
+                            });
+  } else {
+    res.redirect('/license_plate/sign_in');
+  }
+});
 
 
 

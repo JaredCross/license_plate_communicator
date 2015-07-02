@@ -13,7 +13,8 @@ block content
           div.welcome
             h2 Welcome #{userData.firstName} #{userData.lastName}!
           div.options
-            p Register Your License Plate
+            p 
+              a(href='/license_plate/' + userData._id + '/register_lp') Register a License Plate
       div.row
         div.innerRow
           div.sendDM
@@ -25,5 +26,8 @@ block content
           h2 Direct Messages
         div.col-40
           h2 License Plate Messages
+            if (userData.messagesLPM)
+              for message in userData.messagesLPM
+                div.messages= message
     div#footer
     

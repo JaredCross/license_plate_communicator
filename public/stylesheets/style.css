@@ -53,10 +53,12 @@ table {
 **************************************************/
 body {
   font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+	min-height: 100%;
 }
 
 #wrapper {
-	height: 100%;
+	position: relative;
+	min-height: 100%;
 }
 
 #content {
@@ -64,11 +66,10 @@ body {
 }
 
 #header {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#258dc8+42,258dc8+42,258dc8+64;Blue+Flat+%231 */
 	background-color: #3A5683;
   color: white;
   overflow: hidden;
-  width: 100%;
+  width: 97.25%;
   height: 40px;
   padding: 20px;
   border-top: 1px solid black;
@@ -76,16 +77,16 @@ body {
 	clear: both;
 }
 
-
+#spacer {
+	height: 205px;
+}
 
 #footer {
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#258dc8+42,258dc8+42,258dc8+64;Blue+Flat+%231 */
 	background: #3A5683;
 	color: white;
 	overflow: hidden;
 	width: 100%;
-	height: auto;
-	padding: 20px;
+	height: 20px;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
 	clear: both;
@@ -116,6 +117,11 @@ body {
 }
 
 .brand a:link, .brand a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+.options a:link, .options a:visited {
 	color: white;
 	text-decoration: none;
 }
@@ -154,11 +160,6 @@ form input {
 	background-color: #3A5683;
 }
 
-.row div:last-child {
-	margin-left: 2%;
-}
-
-
 .innerRow {
 	width: 100%;
 	height: auto;
@@ -184,6 +185,11 @@ form input {
 
 .options {
 	float: right;
+}
+
+.options a:link, .option a:visited {
+	text-decoration: none;
+	color: white;
 }
 
 .sendDM {
@@ -235,6 +241,74 @@ form input {
 
 }
 
+.registerLPForm {
+	width: 60%;
+	height: 250px;
+	border: 1px solid black;
+	box-sizing: border-box;
+	display:inline-block;
+	margin-left: 20%;
+	background-color: white;
+}
+
+.registerLPForm input {
+	width: 100px;
+	margin-left: 1%;
+}
+
+.registerLPForm label {
+	text-align: right;
+	width: 34%;
+	margin-left: 2%;
+}
+
+.registerLPForm .registerButton {
+	width: auto;
+	margin-left: 35%;
+}
+
+.messageFormContainer {
+	  width: 60%;
+	  height: 250px;
+	  border: 1px solid black;
+	  box-sizing: border-box;
+	  display:inline-block;
+	  margin-left: 20%;
+		background-color: white;
+}
+
+.messageFormContainer label {
+	width: 15%;
+	margin-left: 2%;
+	margin-right: 1%;
+	vertical-align: top;
+	text-align: right;
+}
+
+.messageFormContainer input {
+	width: 20%;
+}
+
+.messageFormContainer textarea {
+	width: 70%;
+	height: 150px;
+}
+
+.sendMessageButton {
+	margin-left: 18%;
+}
+
+
+.messages {
+	border: 1px solid black;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	width: 75%;
+	height: auto;
+	border-radius: 20px;
+}
+
 .col-40 {
   width: 48%;
   height: auto;
@@ -251,7 +325,7 @@ form input {
 
 .col-40 h2 {
 	text-align: center;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 .col-5 li {

@@ -9,7 +9,14 @@ block content
         a(href='http://jaredcross.com') jaredcross.com
     div#content
       div.row
-        div.col-5
+        div.banner
+          div.welcome
+            h2 Send a License Plate Message!
+          div.options
+            p
+              a(href='/license_plate/' + userData._id + '/register_lp') Register a License Plate 
+      div.row
+        div.messageFormContainer
           form(action="/license_plate/" + userData._id + "/sendLPM" method = "post")
             div
               label(for='toLicensePlate') To License Plate:
@@ -17,4 +24,6 @@ block content
             div
               label(for='lpMessage') Message: 
               textarea(id='lpMessage' name='lpMessage')
+            div
+              input(type='submit' value='Send Message' class='sendMessageButton')
             

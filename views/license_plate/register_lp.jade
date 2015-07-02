@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  div#wrapper
+    div#header
+      h1.app
+        a(href='http://lpc.jaredcross.com') Road Rage!
+      h1.brand 
+        a(href='http://jaredcross.com') jaredcross.com
+    div#content
+      div.row
+        div.banner
+          div.welcome
+            h2 Register Your License Plate!
+          div.options
+            p
+              a(href='/license_plate/' + userData._id + '/register_lp') Register a License Plate 
+      div.row
+        div.registerLPForm
+          form(action='/license_plate/' + userData._id + '/register_lp' method= 'post')
+            div
+              label(for='lpNumber') Your License Plate Number:
+              input(type='text' id='lpNumber' name='lpNumber' placeholder='XXX-XXX')
+            div
+              input(type='submit' value='Register License Plate' class='registerButton')
+    div#spacer
+    div#footer          
