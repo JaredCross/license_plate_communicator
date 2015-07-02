@@ -21,6 +21,8 @@ block content
             div
               label(for='toLicensePlate') To License Plate:
               input(type="text" id="toLicensePlate" name="toLicensePlate")
+            div.stateSelectContainer  
+              include ../../includes/select_state.jade
             div
               label(for='lpMessage') Message: 
               textarea(id='lpMessage' name='lpMessage')

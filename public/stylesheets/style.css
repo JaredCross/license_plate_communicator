@@ -253,18 +253,29 @@ form input {
 
 .registerLPForm input {
 	width: 100px;
-	margin-left: 1%;
 }
 
 .registerLPForm label {
 	text-align: right;
 	width: 34%;
 	margin-left: 2%;
+	margin-right: 1%;
 }
 
 .registerLPForm .registerButton {
 	width: auto;
-	margin-left: 35%;
+	margin-left: 37%;
+}
+
+/* for limiting size of state dropdown if desired
+.stateSelectContainer {
+	height: 10px;
+	position: relative;
+}
+*/
+
+.stateSelectContainer select {
+	position: absolute;
 }
 
 .messageFormContainer {
@@ -291,7 +302,7 @@ form input {
 
 .messageFormContainer textarea {
 	width: 70%;
-	height: 150px;
+	height: 100px;
 }
 
 .sendMessageButton {

@@ -21,6 +21,8 @@ block content
             div
               label(for='lpNumber') Your License Plate Number:
               input(type='text' id='lpNumber' name='lpNumber' placeholder='XXX-XXX')
+            div.stateSelectContainer  
+              include ../../includes/select_state.jade
             div
               input(type='submit' value='Register License Plate' class='registerButton')
     div#spacer
