@@ -160,6 +160,49 @@ form input {
 	background-color: #3A5683;
 }
 
+.row h2 {
+	color: white;
+}
+
+.rowTransparent {
+	width: 100%;
+	height: auto;
+	padding: 20px;
+	box-sizing: border-box;
+	display: inline-block;
+	margin-bottom: 20px;
+	background-color: white;
+}
+
+
+
+.entrySign {
+	text-align: left;
+	margin-top: 50px;
+	width: 90%;
+	display: inline-block;
+}
+
+
+
+.entrySign h3 {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.entrySign p, .entrySign ul {
+	text-align: left;
+}
+
+.entrySign ul {
+	margin-top: 5%;
+	list-style: circle;
+}
+
+.entrySign li {
+	margin-left: 6%;
+}
+
 .innerRow {
 	width: 100%;
 	height: auto;

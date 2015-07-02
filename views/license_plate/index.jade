@@ -1,13 +1,31 @@
 extends ../layout
 
 block content
-  div#header
-    h1.app
-      a(href='http://lpc.jaredcross.com') Road Rage!
-    h1.brand 
-      a(href='http://jaredcross.com') jaredcross.com
+  include ../../includes/site_banner.jade
   div#content
     div.row
-      div.col-5
-        a(href='/license_plate/sign_in') Sign in here!
-        a(href='/license_plate/sign_up') Sign up here!
+      div.banner
+        div.welcome
+          h2 Welcome to Road Rage!
+    div.rowTransparent
+      div.col-40
+        div.row
+          h2 Sign In or Sign Up
+        div.entrySign
+          h3 Welcome Back! Continue raging and 
+            a(href='/license_plate/sign_in') sign in here!
+        div.entrySign
+          h3 New here? Get your rage on and 
+            a(href='/license_plate/sign_up') sign up here!
+      div.col-40
+        div.row
+          h2 What's Road Rage?
+        div.entrySign
+          p Road Rage is a way for you to post messages for other Road Rage registered drivers, just by knowing their license plate number! 
+          ul With Road Rage you can: 
+            li Tell people to get off their phone and drive!
+            li Tell that driver that you saw them picking their nose!
+            li Thank that sweet person for letting you in this morning!
+            li Tell someone you hit their car in the parking garage and trade info.
+          
+          
