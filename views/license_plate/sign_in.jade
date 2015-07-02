@@ -23,7 +23,8 @@ block content
             input(type='submit' value='Sign In!' class='loginButton')
       if errorArray      
         div.col-5
-          p.columns Errors:
-            ul
-              for error in errorArray
-                li= error
+          div.row
+            h2 Errors
+          ul
+            for error in errorArray
+              li= error

@@ -146,6 +146,15 @@ form input {
   width: 50%;
 }
 
+.signIn label {
+	text-align: right;
+	width: 20%;
+}
+
+.signIn input {
+	margin-left: 1%;
+}
+
 .create-button {
   width: auto;
 }
@@ -154,9 +163,9 @@ form input {
 	text-align: left;
 }
 
-.loginButton {
+.signIn .loginButton {
 	width: auto;
-	margin-left: 39%;
+	margin-left: 37%;
 }
 
 
@@ -227,14 +236,12 @@ form input {
 	color: white;
 }
 
-.innerRow div:last-child {
-	margin-left: 36%;
-}
 
 .banner {
 	margin-left: 7%;
 	color: white;
 	clear: both;
+	height: auto;
 }
 
 .welcome {
@@ -250,15 +257,32 @@ form input {
 	color: white;
 }
 
+.messagesContainerRow {
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	display: inline-block;
+	background-color: #3A5683;
+	overflow: auto;
+}
+
+.messagesContainerRow h4 {
+	min-width: 100%;
+	display: inline-block;
+	color: white;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	font-size: 18px;
+}
+
 .sendDM {
 	display: inline-block;
-	margin-left: 18%;
 	border: 1px solid black;
-	border-radius: 20px;
+	border-radius: 8px;
 	width: auto;
 	box-sizing: border-box;
-	height: 30px;
-	padding: 7px;
+	height: 5%;
+	font-size: 14px;
 	font-weight: bold;
 	background-color: #EBF5EE;
 	color: black;
@@ -266,17 +290,18 @@ form input {
 	-moz-box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.75);
 	box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.75);
 	cursor: pointer;
+	padding: 7px;
+	margin-bottom: 1%;
 }
 
 .sendLPM {
 	display: inline-block;
-	margin-left: 32%;
 	border: 1px solid black;
-	border-radius: 20px;
+	border-radius: 8px;
 	width: auto;
 	box-sizing: border-box;
-	height: 30px;
-	padding: 7px;
+	height: 5%;
+	font-size: 14px;
 	font-weight: bold;
 	background-color: #EBF5EE;
 	color: black;
@@ -284,6 +309,8 @@ form input {
 	-moz-box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.75);
 	box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.75);
 	cursor: pointer;
+	padding: 7px;
+	margin-bottom: 1%;
 }
 
 
@@ -395,6 +422,12 @@ form input {
 .col-40 h2 {
 	text-align: center;
 	margin-top: 20px;
+}
+
+.col-40 h3 {
+	text-align: center;
+	margin-top: 20px;
+	color: black;
 }
 
 .col-5 li {
