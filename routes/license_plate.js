@@ -211,6 +211,19 @@ router.get('/license_plate/:id/manage_plate', function (req, res, next) {
   }
 });
 
+router.post('/license_plate/:id/delete_plate', function (req, res, next) {
+  usersCollection.update({ _id : req.params.id},
+                          {
+                            $set :
+                              {
+                               licensePlate : "",
+                               onlyPlate : "",
+                               onlyState : ""
+                              }
+                          });
+    res.redirect('/license_plate/'+req.params.id+'/register_lp');
+})
+
 
 
 

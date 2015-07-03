@@ -35,10 +35,10 @@ block content
             div
               label Update: 
               input(type='submit' value='Update' class='updateButton')
-            form(action='/license_plate/' + userData._id + '/delete_plate')
-              div.deletePlateContainer
-                label OR Delete
-                input(type='submit' value='Delete' class='updateButton')
+          form.deleteLPForm(action='/license_plate/' + userData._id + '/delete_plate' method='post')
+            div.deletePlateContainer
+              label OR Delete
+              input(type='submit' value='Delete' class='updateButton')
         if errorArray      
           div.col-40
             div.row
