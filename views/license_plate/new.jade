@@ -3,10 +3,11 @@ extends ../layout
 block content
   include ../../includes/site_banner.jade
   div#content
-    div.row
-      div.col-5
-        p.columns Create a New Account!
-        form(action='/license_plate/sign_up' method = 'post')
+    div.rowTransparent
+      div.col-40
+        div.row
+          h2 Create a New Account!
+        form.signUpForm(action='/license_plate/sign_up' method = 'post')
           div
             label(for='first_name') First Name
             input(type='text' id='first_name' name='first_name' value=(firstName)? firstName : '')
@@ -25,9 +26,10 @@ block content
           div
             input(type='submit' value='Create Account' class='create-button')
       if errorArray      
-        div.col-5
-          p.columns Errors:
-            ul
-              for error in errorArray
-                li= error
+        div.col-40
+          div.row
+            h2 Errors
+          ul.errorList
+            for error in errorArray
+              li= error
             

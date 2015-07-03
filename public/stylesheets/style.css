@@ -386,6 +386,30 @@ form .updateButton {
 	width: auto;
 }
 
+.signUpForm {
+	text-align: left;
+}
+
+.signUpForm label {
+	display: inline-block;
+	width: 40%;
+	text-align: right;
+}
+
+.signUpForm input {
+	margin-left: 1%;
+	width: 40%;
+}
+
+.signUpForm div {
+	margin-top: 3%;
+}
+
+.signUpForm .create-button {
+	margin-left: 41%;
+	width: auto;
+}
+
 /* for limiting size of state dropdown if desired
 .stateSelectContainer {
 	height: 10px;
