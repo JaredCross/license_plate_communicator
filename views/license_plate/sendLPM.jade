@@ -10,9 +10,11 @@ block content
             h2 Send a License Plate Message!
           div.options
             include ../../includes/menu.jade
-      div.row
-        div.messageFormContainer
-          form(action="/license_plate/" + userData._id + "/sendLPM" method = "post")
+      div.rowTransparent
+        div.col-40
+          div.row
+            h2 Send a License Plate Message!
+          form.sendLPMForm(action="/license_plate/" + userData._id + "/sendLPM" method = "post")
             div
               label(for='toLicensePlate') To License Plate:
               input(type="text" id="toLicensePlate" name="toLicensePlate")

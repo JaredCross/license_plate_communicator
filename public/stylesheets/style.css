@@ -392,7 +392,7 @@ form .updateButton {
 
 .signUpForm label {
 	display: inline-block;
-	width: 40%;
+	width: 35%;
 	text-align: right;
 }
 
@@ -406,7 +406,7 @@ form .updateButton {
 }
 
 .signUpForm .create-button {
-	margin-left: 41%;
+	margin-left: 36%;
 	width: auto;
 }
 
@@ -417,31 +417,37 @@ form .updateButton {
 }
 */
 
+.sendLPMForm {
+	text-align: left;
+}
+
+.sendLPMForm label {
+	display: inline-block;
+	width: 20%;
+	text-align: right;
+}
+
+.sendLPMForm select {
+	width: 15%;
+	margin-left: 0.5%;
+}
+
+.sendLPMForm input {
+	margin-left: 1%;
+}
+
+.sendLPMForm div {
+	margin-top: 3%;
+}
+
+.sendLPMForm .sendMessageButton {
+	margin-left: 21%;
+}
+
 .stateSelectContainer select {
 	position: absolute;
 }
 
-.messageFormContainer {
-	  width: 60%;
-	  height: 250px;
-	  border: 1px solid black;
-	  box-sizing: border-box;
-	  display:inline-block;
-	  margin-left: 20%;
-		background-color: white;
-}
-
-.messageFormContainer label {
-	width: 15%;
-	margin-left: 2%;
-	margin-right: 1%;
-	vertical-align: top;
-	text-align: right;
-}
-
-.messageFormContainer input {
-	width: 20%;
-}
 
 #lpMessage {
 	width: 65%;
