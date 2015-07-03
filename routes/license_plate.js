@@ -107,7 +107,8 @@ router.get('/license_plate/:id/sendLPM', function (req, res, next) {
 router.post('/license_plate/:id/sendLPM', function (req, res, next) {
   if (req.cookies.userID) {
     var randomID = bcrypt.hashSync(Date.now().toString(), 4);
-    usersCollection.update({licensePlate: req.body.toLicensePlate},
+    var plateStateCombine = req.body.toLicensePlate.toString() + req.body.state;
+    usersCollection.update({licensePlate: plateStateCombine},
                             {
                               $push: { "messagesLPM" :
                                       {"message": req.body.lpMessage,

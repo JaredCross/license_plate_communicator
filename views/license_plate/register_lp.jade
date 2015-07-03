@@ -7,15 +7,36 @@ block content
       div.row
         div.banner
           div.welcome
-            h2 Register Your License Plate!
+            h2 Manage License Plate!
           div.options
-            p
-              a(href='/license_plate/' + userData._id + '/register_lp') Register a License Plate 
+            ul
+              li Menu
+                ul
+                  li
+                    a(href='/license_plate/'+ userData._id + '/register_lp') Manage License Plates
+                  li Sent Messages
+                  li 
+                    a(href='/license_plate/logout') Logout 
       div.rowTransparent
         div.col-40
           div.row
+            h2 Update License Plate
+          form.registerLPForm(action='/license_plate/' + userData._id + '/register_lp' method= 'post')
+            div
+              label(for='lpNumber') New License Plate Number:
+              input(type='text' id='lpNumber' name='lpNumber' placeholder='No Dashes or Special Characters e.g xxxxxx')
+            div.stateSelectContainer  
+              include ../../includes/select_state.jade
+            div
+              input(type='submit' value='Update License Plate' class='registerButton')
+            div
+              h2 OR
+            div
+              input(type='submit' value='Delete License Plate' class='registerButton')
+        div.col-40
+          div.row
             h2 Register License Plate
-          form(action='/license_plate/' + userData._id + '/register_lp' method= 'post')
+          form.registerLPForm(action='/license_plate/' + userData._id + '/register_lp' method= 'post')
             div
               label(for='lpNumber') Your License Plate Number:
               input(type='text' id='lpNumber' name='lpNumber' placeholder='No Dashes or Special Characters e.g xxxxxx')
