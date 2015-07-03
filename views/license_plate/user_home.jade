@@ -12,9 +12,11 @@ block content
             ul
               li Menu
                 ul
-                  li Manage License Plates
+                  li
+                    a(href='/license_plate/'+ userData._id + '/register_lp') Manage License Plates
                   li Sent Messages
-                  li Logout
+                  li 
+                    a(href='/license_plate/logout') Logout
       div.rowTransparent
         div.col-40
           div.messagesContainerRow
@@ -28,7 +30,13 @@ block content
             div.sendLPM
               p
                 a(href="/license_plate/" + userData._id + "/sendLPM") Send a License Plate Message
-          if (userData.messagesLPM)
-            for message in userData.messagesLPM
-              div.messages= message
-    
+          if (userData.messagesLPM.length > 0)
+            for message, index in userData.messagesLPM  
+              div.messageContainer
+                form(action='/license_plate/'+userData._id+'/delete_lpmessage' method='post')
+                  -var date = new Date(message.date)
+                  textarea(name='plateMessage' readonly)= message.message + "\n\n" + date
+                  input(type='hidden' name='hiddenID' value=message.id)
+                  div.deleteMessageButtonContainer
+                    input.deleteMsgButton(type='submit' value='Delete')
+      

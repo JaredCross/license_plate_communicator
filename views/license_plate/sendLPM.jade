@@ -21,7 +21,7 @@ block content
               include ../../includes/select_state.jade
             div
               label(for='lpMessage') Message: 
-              textarea(id='lpMessage' name='lpMessage')
+              input(type='text' id='lpMessage' name='lpMessage' maxlength='60')
             div
               input(type='submit' value='Send Message' class='sendMessageButton')
             

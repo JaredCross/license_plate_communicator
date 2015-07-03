@@ -44,5 +44,21 @@ module.exports = {
     }
 
     return errorMessageArray;
+  },
+
+  registerLPVerification : function (licensePlate, state) {
+    var errorMessageArray = [];
+
+    if (licensePlate.trim() === '') {
+      errorMessageArray.push('License Plate Number cannot be blank');
+    }
+    if (/[^a-zA-Z0-9]/.test( licensePlate )) {
+      errorMessageArray.push('Please enter only Letters and Numbers for the License Plate')
+    }
+    if (!state) {
+      errorMessageArray.push('You must select the state where your plate is issued')
+    }
+
+    return errorMessageArray;
   }
 }

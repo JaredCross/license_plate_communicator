@@ -11,15 +11,22 @@ block content
           div.options
             p
               a(href='/license_plate/' + userData._id + '/register_lp') Register a License Plate 
-      div.row
-        div.registerLPForm
+      div.rowTransparent
+        div.col-40
+          div.row
+            h2 Register License Plate
           form(action='/license_plate/' + userData._id + '/register_lp' method= 'post')
             div
               label(for='lpNumber') Your License Plate Number:
-              input(type='text' id='lpNumber' name='lpNumber' placeholder='XXX-XXX')
+              input(type='text' id='lpNumber' name='lpNumber' placeholder='No Dashes or Special Characters e.g xxxxxx')
             div.stateSelectContainer  
               include ../../includes/select_state.jade
             div
               input(type='submit' value='Register License Plate' class='registerButton')
-    div#spacer
-    div#footer          
+        if errorArray      
+          div.col-40
+            div.row
+              h2 Errors
+            ul.errorList
+              for error in errorArray
+                li= error 
