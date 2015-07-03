@@ -9,8 +9,7 @@ block content
           div.welcome
             h2 Send a License Plate Message!
           div.options
-            p
-              a(href='/license_plate/' + userData._id + '/register_lp') Register a License Plate 
+            include ../../includes/menu.jade
       div.row
         div.messageFormContainer
           form(action="/license_plate/" + userData._id + "/sendLPM" method = "post")

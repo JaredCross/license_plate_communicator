@@ -7,7 +7,7 @@ block content
       div.row
         div.banner
           div.welcome
-            h2 Register New Plate
+            h2 Manage Your License Plate
             if (userData.onlyPlate != "")
               div
                 p Plate registered to this account: #{userData.onlyState} #{userData.onlyPlate}
@@ -15,26 +15,30 @@ block content
               div.plate
                h2 No License Plate on File
           div.options
-            include ../../includes/menu.jade
+            include ../../includes/menu.jade 
       div.rowTransparent
         div.col-40
           div.row
-            h2 Register New License Plate
+            h2 Update License Plate
             if (userData.onlyPlate != "")
               div.plate
                 p Current Plate: #{userData.onlyState} #{userData.onlyPlate}
             else 
               div.plate
                h2 No License Plate on File
-          form.registerLPForm(action='/license_plate/' + userData._id + '/register_lp' method= 'post')
+          form.registerLPForm(action='/license_plate/' + userData._id + '/update_lp' method= 'post')
             div
               label(for='lpNumber') New License Plate Number:
               input(type='text' id='lpNumber' name='lpNumber' placeholder='No Dashes or Special Characters e.g xxxxxx')
             div.stateSelectContainer  
               include ../../includes/select_state.jade
             div
-              input(type='submit' value='Submit' class='registerButton')
-
+              label Update: 
+              input(type='submit' value='Update' class='updateButton')
+            form(action='/license_plate/' + userData._id + '/delete_plate')
+              div.deletePlateContainer
+                label OR Delete
+                input(type='submit' value='Delete' class='updateButton')
         if errorArray      
           div.col-40
             div.row

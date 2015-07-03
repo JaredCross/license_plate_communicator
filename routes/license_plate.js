@@ -172,6 +172,45 @@ router.post('/license_plate/:id/register_lp', function (req, res, next) {
   }
 });
 
+router.post('/license_plate/:id/update_lp', function (req, res, next) {
+  if (req.cookies.userID) {
+    var onlyPlate = req.body.lpNumber.toLowerCase();
+    var plateStateCombine = onlyPlate + req.body.state;
+    usersCollection.findOne({_id: req.params.id}, function (err, data) {
+      var errorArray = functions.registerLPVerification(onlyPlate, req.body.state)
+      usersCollection.findOne({licensePlate : plateStateCombine }, function (err, lpInUse) {
+        if (lpInUse) {
+          errorArray.push('Sorry someone is already using that License Plate Number')
+          res.render('license_plate/manage_plate', {errorArray : errorArray, userData : data})
+        } else if (errorArray.length != 0) {
+            res.render('license_plate/manage_plate', {errorArray : errorArray, userData : data})
+        } else {
+            usersCollection.update({_id: req.params.id},
+                                    {
+                                      $set: {licensePlate: plateStateCombine,
+                                              onlyPlate : onlyPlate,
+                                              onlyState : req.body.state}
+                                    }, function (err, data) {
+                res.redirect('/license_plate/'+ req.params.id +'/user_home');
+            });
+          }
+        });
+      });
+  } else {
+    res.redirect('/license_plate/sign_in');
+  }
+});
+
+router.get('/license_plate/:id/manage_plate', function (req, res, next) {
+  if(req.cookies.userID) {
+    usersCollection.findOne({ _id: req.params.id}, function (err, data) {
+      res.render('license_plate/manage_plate', {userData : data});
+    });
+  } else {
+    res.redirect('/license_plate/sign_in');
+  }
+});
+
 
 
 

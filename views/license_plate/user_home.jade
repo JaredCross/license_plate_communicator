@@ -8,15 +8,14 @@ block content
         div.banner
           div.welcome
             h2 Welcome #{userData.firstName} #{userData.lastName}!
+            if (userData.onlyPlate != "")
+              div.plate
+                p Plate registered to this account: #{userData.onlyState} #{userData.onlyPlate}
+            else 
+              div.plate
+               h2 No License Plate on File
           div.options
-            ul
-              li Menu
-                ul
-                  li
-                    a(href='/license_plate/'+ userData._id + '/register_lp') Manage License Plates
-                  li Sent Messages
-                  li 
-                    a(href='/license_plate/logout') Logout
+            include ../../includes/menu.jade
       div.rowTransparent
         div.col-40
           div.messagesContainerRow
