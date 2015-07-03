@@ -133,15 +133,6 @@ h2 {
 	font-size: 20px;
 }
 
-.signIn label {
-	text-align: right;
-	width: 20%;
-}
-
-.signIn input {
-	margin-left: 1%;
-}
-
 .create-button {
   width: auto;
 }
@@ -340,21 +331,6 @@ h2 {
 	margin-bottom: 1%;
 }
 
-
-
-
-.col-5 {
-  width: 40%;
-  height: 250px;
-  border: 1px solid black;
-  text-align: center;
-  box-sizing: border-box;
-  display:inline-block;
-  float: left;
-  margin-left: 6%;
-
-}
-
 .registerLPForm {
 	width: 100%;
 	height: auto;
@@ -510,12 +486,28 @@ form .updateButton {
 	color: black;
 }
 
-.col-5 {
-  color: red;
-  list-style: circle;
-  display: block;
-  text-decoration: none;
-  margin-top: 5px;
-  padding: 0;
-  clear: both;
+#signInForm {
+	text-align: left;
+	width: auto;
+}
+
+#signInForm label {
+	display: inline-block;
+	margin-left: 15%;
+	width: 20%;
+	text-align: right;
+}
+
+#signInForm input {
+	width: 40%;
+	margin-left: 1%;
+}
+
+#signInForm div {
+	margin-top: 5%;
+}
+
+#signInForm .loginButton {
+	width: auto;
+	margin-left: 36%;
 }
