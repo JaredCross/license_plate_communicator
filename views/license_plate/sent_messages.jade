@@ -19,12 +19,9 @@ block content
       div.rowTransparent
         div.col-40
           div.row
-            h2 License Plate Messages
-            div.sendLPM
-              p
-                a(href="/license_plate/" + userData._id + "/sendLPM") Send a License Plate Message
-          if (userData.messagesLPM.length > 0)
-            for message, index in userData.messagesLPM  
+            h2 Sent Messages
+          if (userData.sentMessagesLPM.length > 0)
+            for message in userData.sentMessagesLPM  
               div.messageContainer
                 form(action='/license_plate/'+userData._id+'/delete_lpmessage' method='post')
                   -var date = new Date(message.date)
@@ -32,4 +29,3 @@ block content
                   input(type='hidden' name='hiddenID' value=message.id)
                   div.deleteMessageButtonContainer
                     input.deleteMsgButton(type='submit' value='Delete')
-      

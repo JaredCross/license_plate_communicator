@@ -39,7 +39,8 @@ router.post('/license_plate/sign_up', function (req, res, next) {
                                 password: hashedPass,
                                 messagesLPM : [],
                                 messagesDM: [],
-                                licensePlate: ""}, function (err, data) {
+                                licensePlate: "",
+                                sentMessagesLPM: []}, function (err, data) {
         usersCollection.findOne({emailAddress: emailAddress}, function(err, data) {
             res.cookie('userID', data._id);
             res.redirect('/license_plate/'+ data._id +'/register_lp');
@@ -107,13 +108,24 @@ router.get('/license_plate/:id/sendLPM', function (req, res, next) {
 router.post('/license_plate/:id/sendLPM', function (req, res, next) {
   if (req.cookies.userID) {
     var randomID = bcrypt.hashSync(Date.now().toString(), 4);
+    var messageDate = Date.now();
     var plateStateCombine = req.body.toLicensePlate.toString() + req.body.state;
     usersCollection.update({licensePlate: plateStateCombine},
                             {
                               $push: { "messagesLPM" :
                                       {"message": req.body.lpMessage,
-                                       "date" : Date.now(),
+                                       "date" : messageDate,
                                        "id" : randomID }}
+                            });
+    usersCollection.update({ _id : req.params.id},
+                            {
+                              $push : { "sentMessagesLPM" :
+                                      {"message" : req.body.lpMessage,
+                                       "date" : messageDate,
+                                       "id" : randomID,
+                                       "toPlate" : req.body.toLicensePlate,
+                                       "toState" : req.body.state}
+                                       }
                             });
       res.redirect('/license_plate/'+ req.params.id +'/user_home');
   } else {
@@ -224,8 +236,12 @@ router.post('/license_plate/:id/delete_plate', function (req, res, next) {
     res.redirect('/license_plate/'+req.params.id+'/register_lp');
 })
 
+router.get('/license_plate/:id/sent_messages', function (req, res, next) {
+  usersCollection.findOne({ _id : req.params.id}, function (err, data) {
+    res.render('license_plate/sent_messages', {userData : data});
+  })
 
-
+})
 
 
 
