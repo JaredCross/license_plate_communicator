@@ -55,6 +55,7 @@ body {
   font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 	min-height: 100%;
 	background-color: white;
+	cursor: default;
 }
 
 #wrapper {
@@ -135,6 +136,7 @@ h2 {
 
 .create-button {
   width: auto;
+	cursor: pointer;
 }
 
 .buttonContainer {
@@ -144,6 +146,7 @@ h2 {
 .signIn .loginButton {
 	width: auto;
 	margin-left: 37%;
+	cursor: pointer;
 }
 
 
@@ -231,6 +234,7 @@ h2 {
 
 .options li {
 	text-align: center;
+	cursor: default;
 }
 
 
@@ -262,6 +266,16 @@ h2 {
 
 .welcome p {
 	margin-top: 1%;
+}
+
+.welcome p a:link, .welcome p a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+.welcome h2 a:link, .welcome h2 a:visited {
+	color: white;
+	text-decoration: none;
 }
 
 .plate {
@@ -358,6 +372,7 @@ h2 {
 .registerLPForm .registerButton {
 	width: auto;
 	margin-left: 43%;
+	cursor: pointer;
 }
 
 .registerLPForm h2 {
@@ -366,6 +381,10 @@ h2 {
 
 .registerLPForm select {
 	width: 10%;
+}
+
+.registerLPForm a {
+	margin-left: 43%;
 }
 
 .deleteLPForm {
@@ -381,9 +400,18 @@ h2 {
 	margin-right: 1%;
 }
 
+.deleteLPForm a {
+	margin-left: 43%;
+}
+
+.deletePlateContainer {
+	margin-bottom: 3%;
+}
+
 form .updateButton {
 	margin-left: 0%;
 	width: auto;
+	cursor: pointer;
 }
 
 .signUpForm {
@@ -408,6 +436,7 @@ form .updateButton {
 .signUpForm .create-button {
 	margin-left: 36%;
 	width: auto;
+	cursor: pointer;
 }
 
 /* for limiting size of state dropdown if desired
@@ -442,6 +471,11 @@ form .updateButton {
 
 .sendLPMForm .sendMessageButton {
 	margin-left: 21%;
+	cursor: pointer;
+}
+
+.sendLPMForm a {
+	margin-left: 21%;
 }
 
 .messageDisplayForm {
@@ -463,6 +497,7 @@ form .updateButton {
 
 .deleteMsgButton {
 	width: auto;
+	cursor: pointer;
 }
 
 .stateSelectContainer select {
@@ -477,6 +512,7 @@ form .updateButton {
 
 .sendMessageButton {
 	margin-left: 18%;
+	cursor: pointer;
 }
 
 
@@ -484,7 +520,7 @@ form .updateButton {
 
 .deleteMsgButton {
 	width: auto;
-
+	cursor: pointer;
 }
 
 .messageContainer {
@@ -567,4 +603,5 @@ form .updateButton {
 #signInForm .loginButton {
 	width: auto;
 	margin-left: 36%;
+	cursor: pointer;
 }

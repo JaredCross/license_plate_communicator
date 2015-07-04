@@ -7,10 +7,12 @@ block content
       div.row
         div.banner
           div.welcome
-            h2 Welcome #{userData.firstName} #{userData.lastName}!
+            h2 
+              a(href='/license_plate/' + userData._id + '/user_home') Welcome #{userData.firstName} #{userData.lastName}!
             if (userData.onlyPlate != "")
               div.plate
-                p Plate registered to this account: #{userData.onlyState} #{userData.onlyPlate}
+                p
+                  a(href='/license_plate/' + userData._id + '/manage_plate') Plate registered to this account: #{userData.onlyState} #{userData.onlyPlate}
             else 
               div.plate
                h2 No License Plate on File
@@ -23,12 +25,12 @@ block content
           if (userData.sentMessagesLPM.length > 0)
             for message in userData.sentMessagesLPM  
               div.messageContainer
-                form.messageDisplayForm(action='/license_plate/'+userData._id+'/delete_lpmessage' method='post')
+                form.messageDisplayForm(action='/license_plate/'+userData._id+'/delete_sentLPMessage' method='post')
                   -var date = new Date(message.date)
                   div.messageDisplayContainer
-                    p.messageDisplayP #{message.toState} #{message.toPlate} 
-                    p.messageDisplayP #{message.message} 
-                    p.messageDisplayP #{date}
+                    p.messageDisplayP  Sent to: #{message.toState} #{message.toPlate} 
+                    p.messageDisplayP  Message: #{message.message} 
+                    p.messageDisplayP  Sent on: #{date}
                   input(type='hidden' name='hiddenID' value=message.id)
                   div.deleteMessageButtonContainer
                     input.deleteMsgButton(type='submit' value='Delete')

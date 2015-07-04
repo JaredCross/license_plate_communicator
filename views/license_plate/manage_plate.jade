@@ -39,6 +39,8 @@ block content
             div.deletePlateContainer
               label OR Delete
               input(type='submit' value='Delete' class='updateButton')
+            div
+              a(href='/license_plate/' + userData._id + '/user_home') Cancel
         if errorArray      
           div.col-40
             div.row

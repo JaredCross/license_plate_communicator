@@ -134,7 +134,6 @@ router.post('/license_plate/:id/sendLPM', function (req, res, next) {
 });
 
 router.post('/license_plate/:id/delete_lpmessage', function (req, res, next) {
-  console.log(req.body.hiddenID);
   usersCollection.update(
                          {_id : req.params.id},
                          {$pull:
@@ -143,7 +142,7 @@ router.post('/license_plate/:id/delete_lpmessage', function (req, res, next) {
                            }
                          });
   res.redirect('/license_plate/' + req.params.id + '/user_home');
-})
+});
 
 router.get('/license_plate/:id/register_lp', function (req, res, next) {
   if (req.cookies.userID) {
@@ -239,8 +238,20 @@ router.post('/license_plate/:id/delete_plate', function (req, res, next) {
 router.get('/license_plate/:id/sent_messages', function (req, res, next) {
   usersCollection.findOne({ _id : req.params.id}, function (err, data) {
     res.render('license_plate/sent_messages', {userData : data});
-  })
+  });
 
+});
+
+
+router.post('/license_plate/:id/delete_sentLPMessage', function (req, res, next) {
+  usersCollection.update(
+                         {_id : req.params.id},
+                         {$pull:
+                           { sentMessagesLPM :
+                                { id : req.body.hiddenID}
+                           }
+                         });
+    res.redirect('/license_plate/' + req.params.id + '/sent_messages')
 })
 
 
