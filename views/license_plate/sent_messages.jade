@@ -23,9 +23,12 @@ block content
           if (userData.sentMessagesLPM.length > 0)
             for message in userData.sentMessagesLPM  
               div.messageContainer
-                form(action='/license_plate/'+userData._id+'/delete_lpmessage' method='post')
+                form.messageDisplayForm(action='/license_plate/'+userData._id+'/delete_lpmessage' method='post')
                   -var date = new Date(message.date)
-                  textarea(name='plateMessage' readonly)= message.message + "\n\n" + date
+                  div.messageDisplayContainer
+                    p.messageDisplayP #{message.toState} #{message.toPlate} 
+                    p.messageDisplayP #{message.message} 
+                    p.messageDisplayP #{date}
                   input(type='hidden' name='hiddenID' value=message.id)
                   div.deleteMessageButtonContainer
                     input.deleteMsgButton(type='submit' value='Delete')

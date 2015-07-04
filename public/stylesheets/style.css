@@ -428,7 +428,7 @@ form .updateButton {
 }
 
 .sendLPMForm select {
-	width: 15%;
+	width: 15messag%;
 	margin-left: 0.5%;
 }
 
@@ -442,6 +442,27 @@ form .updateButton {
 
 .sendLPMForm .sendMessageButton {
 	margin-left: 21%;
+}
+
+.messageDisplayForm {
+	height: auto;
+	text-align: left;
+}
+
+.messageDisplayContainer {
+	width: 80%;
+	display: inline-block;
+}
+
+.deleteMessageButtonContainer {
+	display: inline-block;
+	height: auto;
+	margin-right: 3%;
+	width: auto;
+}
+
+.deleteMsgButton {
+	width: auto;
 }
 
 .stateSelectContainer select {
@@ -459,11 +480,7 @@ form .updateButton {
 }
 
 
-.deleteMessageButtonContainer {
-	float: right;
-	height: auto;
-	margin-right: 3%;
-}
+
 
 .deleteMsgButton {
 	width: auto;
@@ -477,6 +494,7 @@ form .updateButton {
 	/*position: relative;*/
 	margin-bottom: 5px;
 	padding-bottom: 5px;
+	height: auto;
 }
 
 .messageContainer textarea {
