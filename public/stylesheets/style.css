@@ -58,6 +58,10 @@ body {
 	cursor: default;
 }
 
+b {
+	font-weight: bold;
+}
+
 #wrapper {
 	position: relative;
 	min-height: 100%;
@@ -481,6 +485,11 @@ form .updateButton {
 .messageDisplayForm {
 	height: auto;
 	text-align: left;
+	padding: 1%;
+}
+
+.messageDisplayP {
+	margin-top: 2%;
 }
 
 .messageDisplayContainer {

@@ -28,9 +28,15 @@ block content
                 form.messageDisplayForm(action='/license_plate/'+userData._id+'/delete_sentLPMessage' method='post')
                   -var date = new Date(message.date)
                   div.messageDisplayContainer
-                    p.messageDisplayP  Sent to: #{message.toState} #{message.toPlate} 
-                    p.messageDisplayP  Message: #{message.message} 
-                    p.messageDisplayP  Sent on: #{date}
+                    p.messageDisplayP
+                      b Sent to: 
+                      | #{message.toState} #{message.toPlate} 
+                    p.messageDisplayP 
+                      b Message: 
+                      | #{message.message} 
+                    p.messageDisplayP 
+                      b Sent on: 
+                      | #{date}
                   input(type='hidden' name='hiddenID' value=message.id)
                   div.deleteMessageButtonContainer
                     input.deleteMsgButton(type='submit' value='Delete')
