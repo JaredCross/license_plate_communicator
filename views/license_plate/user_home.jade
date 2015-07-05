@@ -7,12 +7,12 @@ block content
       div.row
         div.banner
           div.welcome
-            h2
-              a(href='/license_plate/' + userData._id + '/user_home') Welcome #{userData.firstName} #{userData.lastName}!
+            h2 Welcome 
+              a(href='/license_plate/' + userData._id + '/user_home') #{userData.firstName} #{userData.lastName}!
             if (userData.onlyPlate)
               div.plate
-                p 
-                  a(href='/license_plate/' + userData._id + '/manage_plate') Plate registered to this account: #{userData.onlyState} #{userData.onlyPlate.toUpperCase()}
+                h2 Plate registered to this account: 
+                  a(href='/license_plate/' + userData._id + '/manage_plate') #{userData.onlyState} #{userData.onlyPlate.toUpperCase()}
             else 
               div.plate
                h2 No License Plate on File

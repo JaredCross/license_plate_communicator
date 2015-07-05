@@ -9,11 +9,11 @@ block content
           div.welcome
             h2 Register New Plate
             if (userData.onlyPlate != "")
-              div
-                p Plate registered to this account: #{userData.onlyState} #{userData.onlyPlate}
+              div.plate
+                h2 Plate registered to this account: #{userData.onlyState} #{userData.onlyPlate.toUpperCase()}
             else 
               div.plate
-               h2 No License Plate on File
+                h2 No License Plate on File
           div.options
             include ../../includes/menu.jade
       div.rowTransparent

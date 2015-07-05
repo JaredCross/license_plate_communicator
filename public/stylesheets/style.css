@@ -279,22 +279,14 @@ h2 {
 	float: left;
 }
 
-.welcome p {
-	margin-top: 1%;
-}
-
-.welcome p a:link, .welcome p a:visited {
-	color: white;
-	text-decoration: none;
-}
 
 .welcome h2 a:link, .welcome h2 a:visited {
 	color: white;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 .plate {
-	margin-top: 1%;
+	margin-top: 3%;
 	color: white
 }
 
