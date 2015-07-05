@@ -10,7 +10,7 @@ block content
             h2 Manage Your License Plate
             if (userData.onlyPlate != "")
               div
-                p Plate registered to this account: #{userData.onlyState} #{userData.onlyPlate}
+                p Plate registered to this account: #{userData.onlyState} #{userData.onlyPlate.toUpperCase()}
             else 
               div.plate
                h2 No License Plate on File

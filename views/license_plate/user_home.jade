@@ -12,7 +12,7 @@ block content
             if (userData.onlyPlate != "")
               div.plate
                 p 
-                  a(href='/license_plate/' + userData._id + '/manage_plate') Plate registered to this account: #{userData.onlyState} #{userData.onlyPlate}
+                  a(href='/license_plate/' + userData._id + '/manage_plate') Plate registered to this account: #{userData.onlyState} #{userData.onlyPlate.toUpperCase()}
             else 
               div.plate
                h2 No License Plate on File
