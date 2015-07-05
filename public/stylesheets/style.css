@@ -63,6 +63,11 @@ input[type='submit'] {
 	color: white;
 }
 
+input[type='submit']:hover {
+	background-color: #3cb0fd;
+	color: white;
+}
+
 b {
 	font-weight: bold;
 }
