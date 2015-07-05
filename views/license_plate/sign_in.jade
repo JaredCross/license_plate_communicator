@@ -20,10 +20,12 @@ block content
             input(type='password' id='password' name ='password')
           div.buttonContainer
             input(type='submit' value='Sign In!' class='loginButton')
+        div.orSignUpContainer
+          a(href='/license_plate/sign_up') New here and want to rage? Sign up here!
       if errorArray      
         div.col-40
           div.row
             h2 Errors
-          ul
+          ul.errorList
             for error in errorArray
               li= error

@@ -566,15 +566,15 @@ form .updateButton {
 .errorList {
 	color: red;
 	list-style: circle;
-	display: block;
+	display: inline-block;
 	text-decoration: none;
 	margin-top: 5px;
 	padding: 0;
+	margin: 0 auto;
 }
 
 .errorList li {
 	text-align: left;
-	margin-left: 15%;
 }
 
 .col-40 h2 {
@@ -613,4 +613,10 @@ form .updateButton {
 	width: auto;
 	margin-left: 36%;
 	cursor: pointer;
+}
+
+.orSignUpContainer {
+	padding-top: 10%;
+	display: inline-block;
+	margin: 0 auto;
 }
