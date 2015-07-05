@@ -7,12 +7,17 @@ block content
       div.row
         div.banner
           div.welcome
-            h2 Welcome 
-              a(href='/license_plate/' + userData._id + '/user_home') #{userData.firstName} #{userData.lastName}!
+            div.plate
+              h2 Welcome 
+                a(href='/license_plate/' + userData._id + '/user_home') 
+                  | #{userData.firstName} #{userData.lastName}!
+                  span.description Go to user home
             if (userData.onlyPlate)
               div.plate
                 h2 Plate registered to this account: 
-                  a(href='/license_plate/' + userData._id + '/manage_plate') #{userData.onlyState} #{userData.onlyPlate.toUpperCase()}
+                  a(href='/license_plate/' + userData._id + '/manage_plate') 
+                    | #{userData.onlyState} #{userData.onlyPlate.toUpperCase()}
+                    span.description Manage License Plate
             else 
               div.plate
                h2 No License Plate on File

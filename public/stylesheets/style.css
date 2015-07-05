@@ -275,6 +275,7 @@ h2 {
 	background-color: #3A5683;
 }
 
+
 .welcome {
 	float: left;
 }
@@ -285,8 +286,20 @@ h2 {
 	text-decoration: underline;
 }
 
+.welcome h2 a:hover span.description {
+	background-color: #7C6C65;
+	opacity: 1;
+	position: absolute;
+	margin-left: .5%;
+}
+
+.description {
+	opacity: 0;
+}
+
+
+
 .plate {
-	margin-top: 3%;
 	color: white
 }
 

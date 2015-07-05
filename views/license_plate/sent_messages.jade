@@ -7,11 +7,14 @@ block content
       div.row
         div.banner
           div.welcome
-            h2 Sent Messages
+            div.plate
+              h2 Sent Messages
             if (userData.onlyPlate != "")
               div.plate
-                p
-                  a(href='/license_plate/' + userData._id + '/manage_plate') Plate registered to this account: #{userData.onlyState} #{userData.onlyPlate.toUpperCase()}
+                h2 Plate registered to this account: 
+                  a(href='/license_plate/' + userData._id + '/manage_plate')
+                    | #{userData.onlyState} #{userData.onlyPlate.toUpperCase()}
+                    span.description Manage License Plate
             else 
               div.plate
                h2 No License Plate on File
