@@ -20,7 +20,7 @@ block content
         div.col-40
           div.row
             h2 Update License Plate
-            if (userData.onlyPlate != "")
+            if (userData.onlyPlate)
               div.plate
                 p Current Plate: #{userData.onlyState} #{userData.onlyPlate.toUpperCase()}
             else 

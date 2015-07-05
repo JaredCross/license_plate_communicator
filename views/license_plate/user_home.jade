@@ -9,7 +9,7 @@ block content
           div.welcome
             h2
               a(href='/license_plate/' + userData._id + '/user_home') Welcome #{userData.firstName} #{userData.lastName}!
-            if (userData.onlyPlate != "")
+            if (userData.onlyPlate)
               div.plate
                 p 
                   a(href='/license_plate/' + userData._id + '/manage_plate') Plate registered to this account: #{userData.onlyState} #{userData.onlyPlate.toUpperCase()}
