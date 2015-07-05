@@ -488,6 +488,10 @@ form .updateButton {
 	cursor: pointer;
 }
 
+.instructions {
+	margin-top: .5%;
+}
+
 /* for limiting size of state dropdown if desired
 .stateSelectContainer {
 	height: 10px;

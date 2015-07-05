@@ -235,7 +235,11 @@ router.post('/license_plate/:id/update_lp', function (req, res, next) {
 router.get('/license_plate/:id/manage_plate', function (req, res, next) {
   if(req.cookies.userID) {
     usersCollection.findOne({ _id: req.params.id}, function (err, data) {
-      res.render('license_plate/manage_plate', {userData : data});
+      if (data.licensePlate != "") {
+        res.render('license_plate/manage_plate', {userData : data});
+      } else {
+        res.redirect('/license_plate/' + data._id + '/register_lp')
+      }
     });
   } else {
     res.redirect('/license_plate/sign_in');

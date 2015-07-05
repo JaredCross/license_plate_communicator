@@ -18,7 +18,7 @@ block content
             div
               label(for='toLicensePlate') To License Plate:
               input(type="text" id="toLicensePlate"  autocomplete="off" name="toLicensePlate" placeholder='No Dashes or Special Characters e.g. 123XXX')
-              p No Dashes or Special Characters e.g. 123XXX
+              p.instructions No Dashes or Special Characters e.g. 123XXX
             div.stateSelectContainer  
               include ../../includes/select_state.jade
             div
@@ -28,7 +28,7 @@ block content
             div
               input(type='submit' value='Send Message' class='sendMessageButton')
             div
-              a(href='/license_plate/' + userData._id + '/user_home') Cancel
+              a(href='/license_plate/' + userData._id + '/user_home') &#8592; Cancel 
         if errorArray      
           div.col-40
             div.row
