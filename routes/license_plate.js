@@ -117,7 +117,7 @@ router.post('/license_plate/:id/sendLPM', function (req, res, next) {
     var errorArray = functions.sendLPMVerification(req.body.toLicensePlate, req.body.state, req.body.lpMessage);
     var randomID = bcrypt.hashSync(Date.now().toString(), 4);
     var messageDate = Date.now();
-    var plateStateCombine = req.body.toLicensePlate.toString() + req.body.state;
+    var plateStateCombine = req.body.toLicensePlate.toString().toLowerCase() + req.body.state;
     usersCollection.findOne({ _id : req.params.id}, function (err, data) {
       usersCollection.findOne({licensePlate : plateStateCombine}, function (err, recipient) {
         if (errorArray.length != 0) {

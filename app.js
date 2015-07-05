@@ -45,10 +45,11 @@ if (app.get('env') === 'development') {
     });
   });
 }
+
 // for use w/ deployment
-// if (app.get('env') === 'production') {
-//   app.listen(3000);
-// }
+if (app.get('env') === 'production') {
+  app.listen(3000);
+}
 
 // production error handler
 // no stacktraces leaked to user
