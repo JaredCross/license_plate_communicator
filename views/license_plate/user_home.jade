@@ -27,9 +27,9 @@ block content
         div.col-40
           div.row
             h2 License Plate Messages
-            div.sendLPM
-              p
-                a(href="/license_plate/" + userData._id + "/sendLPM") Send a License Plate Message
+            a(href="/license_plate/" + userData._id + "/sendLPM")
+              div.sendLPM
+                p Send a License Plate Message
           if (userData.messagesLPM.length > 0)
             for message, index in userData.messagesLPM  
               div.messageContainer
