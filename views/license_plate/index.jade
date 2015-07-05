@@ -14,10 +14,10 @@ block content
         form#signInForm(action='/license_plate/sign_in' method = 'post')
           div
             label(for='email') Email Address
-            input(type='text' id='email' name='email' value=(email)? email : '')
+            input(type='text' id='email' autocomplete="off" name='email' value=(email)? email : '')
           div
             label(for='password') Password
-            input(type='password' id='password' name ='password')
+            input(type='password' id='password' autocomplete="off" name ='password')
           div.buttonContainer
             input(type='submit' value='Sign In!' class='loginButton')
         div.orSignUpContainer

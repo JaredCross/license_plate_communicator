@@ -10,19 +10,19 @@ block content
         form.signUpForm(action='/license_plate/sign_up' method = 'post')
           div
             label(for='first_name') First Name
-            input(type='text' id='first_name' name='first_name' value=(firstName)? firstName : '')
+            input(type='text' id='first_name' autocomplete="off" name='first_name' value=(firstName)? firstName : '')
           div
             label(for='last_name') Last Name
-            input(type='text' id='last_name' name='last_name' value=(lastName)? lastName : '')
+            input(type='text' id='last_name' autocomplete="off" name='last_name' value=(lastName)? lastName : '')
           div
             label(for='email') Email Address
-            input(type='text' id='email' name='email' value=(email)? email : '')
+            input(type='text' id='email' autocomplete="off" name='email' value=(email)? email : '')
           div
             label(for='password') Password
-            input(type='password' id='password' name ='password')
+            input(type='password' id='password' autocomplete="off" name ='password')
           div
             label(for='confirm') Confirm Password
-            input(type='password' id='confirm' name='confirm')
+            input(type='password' id='confirm' autocomplete="off" name='confirm')
           div
             input(type='submit' value='Create Account' class='create-button')
       if errorArray      
