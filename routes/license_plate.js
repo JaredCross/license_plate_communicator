@@ -6,7 +6,12 @@ var bcrypt = require('bcrypt');
 var functions = require('../src/lib.js');
 
 router.get('/license_plate', function (req, res, next) {
-  res.render('license_plate/index');
+  if (req.cookies.userID) {
+    res.redirect('/license_plate/' + req.cookies.userID + '/user_home')
+
+  } else {
+    res.render('license_plate/index');
+  }
 });
 
 router.get('/license_plate/sign_up', function (req, res, next) {
@@ -105,33 +110,47 @@ router.get('/license_plate/:id/sendLPM', function (req, res, next) {
   }
 });
 
+//Post to send License Plate Message
 router.post('/license_plate/:id/sendLPM', function (req, res, next) {
   if (req.cookies.userID) {
+    var errorArray = functions.sendLPMVerification(req.body.toLicensePlate, req.body.state, req.body.lpMessage);
     var randomID = bcrypt.hashSync(Date.now().toString(), 4);
     var messageDate = Date.now();
     var plateStateCombine = req.body.toLicensePlate.toString() + req.body.state;
-    usersCollection.update({licensePlate: plateStateCombine},
-                            {
-                              $push: { "messagesLPM" :
-                                      {"message": req.body.lpMessage,
-                                       "date" : messageDate,
-                                       "id" : randomID }}
-                            });
-    usersCollection.update({ _id : req.params.id},
-                            {
-                              $push : { "sentMessagesLPM" :
-                                      {"message" : req.body.lpMessage,
-                                       "date" : messageDate,
-                                       "id" : randomID,
-                                       "toPlate" : req.body.toLicensePlate,
-                                       "toState" : req.body.state}
-                                       }
-                            });
-      res.redirect('/license_plate/'+ req.params.id +'/user_home');
+    usersCollection.findOne({ _id : req.params.id}, function (err, data) {
+      usersCollection.findOne({licensePlate : plateStateCombine}, function (err, recipient) {
+        if (errorArray.length != 0) {
+          res.render('license_plate/sendLPM', {errorArray : errorArray, userData : data})
+        } else if (!recipient) {
+          errorArray = ["Sorry, no user with the License Plate Combo exists"];
+          res.render('license_plate/sendLPM', {errorArray : errorArray, userData : data})
+        } else {
+          usersCollection.update({licensePlate: plateStateCombine},
+                                  {
+                                    $push: { "messagesLPM" :
+                                            {"message": req.body.lpMessage,
+                                             "date" : messageDate,
+                                             "id" : randomID }}
+                                  });
+          usersCollection.update({ _id : req.params.id},
+                                  {
+                                    $push : { "sentMessagesLPM" :
+                                            {"message" : req.body.lpMessage,
+                                             "date" : messageDate,
+                                             "id" : randomID,
+                                             "toPlate" : req.body.toLicensePlate,
+                                             "toState" : req.body.state}
+                                             }
+                                  });
+          res.redirect('/license_plate/'+ req.params.id +'/user_home');
+        }
+      });
+    });
   } else {
     res.redirect('/license_plate/sign_in');
   }
 });
+
 
 router.post('/license_plate/:id/delete_lpmessage', function (req, res, next) {
   usersCollection.update(

@@ -27,4 +27,10 @@ block content
               input(type='submit' value='Send Message' class='sendMessageButton')
             div
               a(href='/license_plate/' + userData._id + '/user_home') Cancel
-            
+        if errorArray      
+          div.col-40
+            div.row
+              h2 Errors
+            ul.errorList
+              for error in errorArray
+                li= error     

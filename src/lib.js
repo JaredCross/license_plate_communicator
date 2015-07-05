@@ -60,5 +60,23 @@ module.exports = {
     }
 
     return errorMessageArray;
+  },
+
+  sendLPMVerification : function (licensePlate, state, message) {
+    var errorMessageArray = [];
+
+    if (licensePlate.trim() === '') {
+      errorMessageArray.push('License Plate Number cannot be blank');
+    }
+    if (/[^a-zA-Z0-9]/.test( licensePlate )) {
+      errorMessageArray.push('Please enter only Letters and Numbers for the License Plate')
+    }
+    if (!state) {
+      errorMessageArray.push('You must select the state where your plate is issued')
+    }
+    if (message.trim() === '') {
+      errorMessageArray.push('You must enter a message')
+    }
+    return errorMessageArray;
   }
 }
