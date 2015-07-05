@@ -58,6 +58,11 @@ body {
 	cursor: default;
 }
 
+input[type='submit'] {
+	background-color: #3A5683;
+	color: white;
+}
+
 b {
 	font-weight: bold;
 }

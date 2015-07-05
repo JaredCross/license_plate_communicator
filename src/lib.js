@@ -72,7 +72,7 @@ module.exports = {
       errorMessageArray.push('Please enter only Letters and Numbers for the License Plate')
     }
     if (!state) {
-      errorMessageArray.push('You must select the state where your plate is issued')
+      errorMessageArray.push('You must select the state where the license plate is from')
     }
     if (message.trim() === '') {
       errorMessageArray.push('You must enter a message')
