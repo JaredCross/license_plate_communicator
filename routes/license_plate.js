@@ -37,6 +37,7 @@ router.post('/license_plate/sign_up', function (req, res, next) {
         res.render('license_plate/new', {errorArray: errorArray, firstName: firstName,
                                           lastName: lastName, email: emailAddress});
     } else {
+        //messagesDM for future expansion of direct messages
         var hashedPass = bcrypt.hashSync(password, 8);
         usersCollection.insert({firstName: req.body.first_name,
                                 lastName: req.body.last_name,
