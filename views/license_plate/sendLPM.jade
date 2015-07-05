@@ -17,12 +17,14 @@ block content
           form.sendLPMForm(action="/license_plate/" + userData._id + "/sendLPM" method = "post")
             div
               label(for='toLicensePlate') To License Plate:
-              input(type="text" id="toLicensePlate" name="toLicensePlate")
+              input(type="text" id="toLicensePlate" name="toLicensePlate" placeholder='No Dashes or Special Characters e.g. 123XXX')
+              p No Dashes or Special Characters e.g. 123XXX
             div.stateSelectContainer  
               include ../../includes/select_state.jade
             div
               label(for='lpMessage') Message: 
-              input(type='text' id='lpMessage' name='lpMessage' maxlength='140')
+              textarea(id='lpMessage' name='lpMessage' maxlength='140')
+              p 140 Character Limit
             div
               input(type='submit' value='Send Message' class='sendMessageButton')
             div

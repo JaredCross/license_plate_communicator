@@ -391,6 +391,12 @@ h2 {
 	margin-left: 43%;
 }
 
+.registerLPForm p {
+	color: black;
+	font-size: 12px;
+	margin-left: 43%;
+}
+
 .deleteLPForm {
 	text-align: left;
 	margin-top: 5%;
@@ -456,16 +462,18 @@ form .updateButton {
 
 .sendLPMForm label {
 	display: inline-block;
-	width: 20%;
+	width: 25%;
 	text-align: right;
+	vertical-align: top;
 }
 
 .sendLPMForm select {
-	width: 15messag%;
+	width: 15%;
 	margin-left: 0.5%;
 }
 
 .sendLPMForm input {
+	width: 45%;
 	margin-left: 1%;
 }
 
@@ -473,13 +481,28 @@ form .updateButton {
 	margin-top: 3%;
 }
 
-.sendLPMForm .sendMessageButton {
-	margin-left: 21%;
-	cursor: pointer;
+.sendLPMForm p {
+	font-size: 12px;
+	color: black;
+	margin-left: 26.5%;
 }
 
+
 .sendLPMForm a {
-	margin-left: 21%;
+	margin-left: 26%;
+}
+
+.sendLPMForm textarea {
+	resize: none;
+	height: 60px;
+	width: 45%;
+	margin-left: 1%;
+}
+
+.sendLPMForm input[type=submit] {
+	width: auto;
+	margin-left: 26%;
+	cursor: pointer;
 }
 
 .messageDisplayForm {
@@ -513,11 +536,6 @@ form .updateButton {
 	position: absolute;
 }
 
-
-#lpMessage {
-	width: 65%;
-	height: 15px;
-}
 
 .sendMessageButton {
 	margin-left: 18%;

@@ -29,7 +29,8 @@ block content
           form.registerLPForm(action='/license_plate/' + userData._id + '/register_lp' method= 'post')
             div
               label(for='lpNumber') New License Plate Number:
-              input(type='text' id='lpNumber' name='lpNumber' placeholder='No Dashes or Special Characters e.g xxxxxx')
+              input(type='text' id='lpNumber' name='lpNumber' placeholder='No Dashes or Special Characters e.g 123XXX')
+              p No Dashes or Special Characters e.g. 123XXX
             div.stateSelectContainer  
               include ../../includes/select_state.jade
             div
