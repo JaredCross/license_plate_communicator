@@ -255,6 +255,7 @@ h2 {
 
 .options a:hover, .options a:active {
 	color: white;
+	z-index: 99;
 }
 
 .options {
