@@ -8,7 +8,7 @@ block content
         div.banner
           div.welcome
             h2 Register New Plate
-            if (userData.onlyPlate != "")
+            if (userData.onlyPlate)
               div.plate
                 h2 Plate registered to this account: #{userData.onlyState} #{userData.onlyPlate.toUpperCase()}
             else 
