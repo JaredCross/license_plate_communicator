@@ -58,6 +58,11 @@ body {
 	cursor: default;
 }
 
+.error404 {
+	font-size: 28px;
+	font-weight: bold;
+}
+
 input[type='submit'] {
 	background-color: rgb(58,86,131);
 	color: white;
