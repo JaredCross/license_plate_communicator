@@ -255,13 +255,13 @@ h2 {
 
 .options a:hover, .options a:active {
 	color: white;
-	z-index: 99;
 }
 
 .options {
 	position: absolute;
 	left: 80%;
 	width: 20%;
+	z-index: 99;
 }
 
 .options li {
