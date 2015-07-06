@@ -246,6 +246,7 @@ h2 {
 	clear: both;
 	height: auto;
 	position: relative;
+	z-index: 99;
 }
 
 .options a:link, .options a:visited {
@@ -277,8 +278,6 @@ h2 {
 	color: white;
 	width: auto;
 	margin-top: 3%;
-	position: relative;
-	z-index: 99;
 }
 
 .options li ul li {
