@@ -10,12 +10,12 @@ router.get('/license_plate', function (req, res, next) {
     res.redirect('/license_plate/' + req.cookies.userID + '/user_home')
 
   } else {
-    res.render('license_plate/index');
+    res.render('license_plate/index', {title : 'RoadRage'});
   }
 });
 
 router.get('/license_plate/sign_up', function (req, res, next) {
-  res.render('license_plate/new');
+  res.render('license_plate/new', {title : 'RoadRage'});
 });
 
 router.post('/license_plate/sign_up', function (req, res, next) {
@@ -32,10 +32,10 @@ router.post('/license_plate/sign_up', function (req, res, next) {
     if(data){
       errorArray =["Sorry, that email address is already in use."];
       res.render('license_plate/new', {errorArray: errorArray, firstName: firstName,
-                                        lastName: lastName, email: emailAddress});
+                                        lastName: lastName, email: emailAddress, title : 'RoadRage'});
     } else if (errorArray.length != 0) {
         res.render('license_plate/new', {errorArray: errorArray, firstName: firstName,
-                                          lastName: lastName, email: emailAddress});
+                                          lastName: lastName, email: emailAddress, title : 'RoadRage'});
     } else {
         //messagesDM for future expansion of direct messages
         var hashedPass = bcrypt.hashSync(password, 8);
@@ -57,7 +57,7 @@ router.post('/license_plate/sign_up', function (req, res, next) {
 });
 
 router.get('/license_plate/sign_in', function (req, res, next) {
-  res.render('license_plate/sign_in');
+  res.render('license_plate/sign_in', {title : 'RoadRage'});
 });
 
 router.get('/license_plate/logout', function (req, res, next) {
@@ -79,12 +79,12 @@ router.post('/license_plate/sign_in', function (req, res, next) {
       } else {
         var errorArray = ['Incorrect username or password'];
         res.render('license_plate/sign_in', {errorArray: errorArray,
-                                              email: req.body.email});
+                                              email: req.body.email, title : 'RoadRage'});
       }
     } else {
       var errorArray = ['Incorrect username or password'];
       res.render('license_plate/sign_in', {errorArray: errorArray,
-                                            email: req.body.email});
+                                            email: req.body.email, title : 'RoadRage'});
     }
 
   });
@@ -94,7 +94,7 @@ router.post('/license_plate/sign_in', function (req, res, next) {
 router.get('/license_plate/:id/user_home', function (req, res, next) {
   if(req.cookies.userID){
     usersCollection.findOne({_id: req.params.id}, function (err, data) {
-      res.render('license_plate/user_home', {userData: data});
+      res.render('license_plate/user_home', {userData: data, title : 'RoadRage'});
     });
   } else {
     res.redirect('/license_plate/sign_in');
@@ -104,7 +104,7 @@ router.get('/license_plate/:id/user_home', function (req, res, next) {
 router.get('/license_plate/:id/sendLPM', function (req, res, next) {
   if(req.cookies.userID) {
     usersCollection.findOne({_id: req.params.id}, function (err, data) {
-      res.render('license_plate/sendLPM', {userData: data});
+      res.render('license_plate/sendLPM', {userData: data, title : 'RoadRage'});
     });
   } else {
     res.redirect('/license_plate/sign_in');
@@ -121,10 +121,10 @@ router.post('/license_plate/:id/sendLPM', function (req, res, next) {
     usersCollection.findOne({ _id : req.params.id}, function (err, data) {
       usersCollection.findOne({licensePlate : plateStateCombine}, function (err, recipient) {
         if (errorArray.length != 0) {
-          res.render('license_plate/sendLPM', {errorArray : errorArray, userData : data})
+          res.render('license_plate/sendLPM', {errorArray : errorArray, userData : data, title : 'RoadRage'})
         } else if (!recipient) {
           errorArray = ["Sorry, no user with the License Plate Combo exists"];
-          res.render('license_plate/sendLPM', {errorArray : errorArray, userData : data})
+          res.render('license_plate/sendLPM', {errorArray : errorArray, userData : data, title : 'RoadRage'})
         } else {
           usersCollection.update({licensePlate: plateStateCombine},
                                   {
@@ -167,7 +167,7 @@ router.post('/license_plate/:id/delete_lpmessage', function (req, res, next) {
 router.get('/license_plate/:id/register_lp', function (req, res, next) {
   if (req.cookies.userID) {
     usersCollection.findOne({_id: req.params.id}, function (err, data) {
-      res.render('license_plate/register_lp', {userData: data});
+      res.render('license_plate/register_lp', {userData: data, title : 'RoadRage'});
     });
   } else {
       res.redirect('/license_plate/sign_in');
@@ -183,9 +183,9 @@ router.post('/license_plate/:id/register_lp', function (req, res, next) {
       usersCollection.findOne({licensePlate : plateStateCombine }, function (err, lpInUse) {
         if (lpInUse) {
           errorArray.push('Sorry someone is already using that License Plate Number')
-          res.render('license_plate/register_lp', {errorArray : errorArray, userData : data})
+          res.render('license_plate/register_lp', {errorArray : errorArray, userData : data, title : 'RoadRage'})
         } else if (errorArray.length != 0) {
-            res.render('license_plate/register_lp', {errorArray : errorArray, userData : data})
+            res.render('license_plate/register_lp', {errorArray : errorArray, userData : data, title : 'RoadRage'})
         } else {
             usersCollection.update({_id: req.params.id},
                                     {
@@ -212,9 +212,9 @@ router.post('/license_plate/:id/update_lp', function (req, res, next) {
       usersCollection.findOne({licensePlate : plateStateCombine }, function (err, lpInUse) {
         if (lpInUse) {
           errorArray.push('Sorry someone is already using that License Plate Number')
-          res.render('license_plate/manage_plate', {errorArray : errorArray, userData : data})
+          res.render('license_plate/manage_plate', {errorArray : errorArray, userData : data, title : 'RoadRage'})
         } else if (errorArray.length != 0) {
-            res.render('license_plate/manage_plate', {errorArray : errorArray, userData : data})
+            res.render('license_plate/manage_plate', {errorArray : errorArray, userData : data, title : 'RoadRage'})
         } else {
             usersCollection.update({_id: req.params.id},
                                     {
@@ -236,7 +236,7 @@ router.get('/license_plate/:id/manage_plate', function (req, res, next) {
   if(req.cookies.userID) {
     usersCollection.findOne({ _id: req.params.id}, function (err, data) {
       if (data.licensePlate != "") {
-        res.render('license_plate/manage_plate', {userData : data});
+        res.render('license_plate/manage_plate', {userData : data, title : 'RoadRage'});
       } else {
         res.redirect('/license_plate/' + data._id + '/register_lp')
       }
@@ -261,7 +261,7 @@ router.post('/license_plate/:id/delete_plate', function (req, res, next) {
 
 router.get('/license_plate/:id/sent_messages', function (req, res, next) {
   usersCollection.findOne({ _id : req.params.id}, function (err, data) {
-    res.render('license_plate/sent_messages', {userData : data});
+    res.render('license_plate/sent_messages', {userData : data, title : 'RoadRage'});
   });
 
 });
