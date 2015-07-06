@@ -261,12 +261,13 @@ h2 {
 	position: absolute;
 	left: 80%;
 	width: 20%;
-	z-index: 99;
+
 }
 
 .options li {
 	text-align: center;
 	cursor: default;
+	z-index: 99;
 }
 
 
