@@ -59,7 +59,7 @@ body {
 }
 
 input[type='submit'] {
-	background-color: #3A5683;
+	background-color: rgb(58,86,131);
 	color: white;
 }
 
@@ -486,6 +486,12 @@ form .updateButton {
 	margin-left: 36%;
 	width: auto;
 	cursor: pointer;
+}
+
+.signUpForm p {
+	color: black;
+	font-size: 12px;
+	margin-left: 36%;
 }
 
 .instructions {

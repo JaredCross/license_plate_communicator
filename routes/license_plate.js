@@ -279,7 +279,4 @@ router.post('/license_plate/:id/delete_sentLPMessage', function (req, res, next)
 })
 
 
-
-
-
 module.exports = router;
