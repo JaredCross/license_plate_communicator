@@ -9,7 +9,7 @@ block content
           div.welcome
             div.plate
               h2 Sent Messages
-            if (userData.onlyPlate != "")
+            if (userData.onlyPlate)
               div.plate
                 h2 Plate registered to this account: 
                   a(href='/license_plate/' + userData._id + '/manage_plate')
